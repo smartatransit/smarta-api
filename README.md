@@ -1,7 +1,8 @@
 # SMARTA
 
 SMARTA is a very thin wrapper around the
-[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx).
+[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented 
+with analysis of historic patterns and static schedule data.
 
 ## Continuous Integration Status
 
