@@ -49,8 +49,4 @@
 (defn load-rail-schedule []
   (reduce (fn [acc item]
             (assoc acc (keyword item) (load-rail-lines item (keys rail-lines)))
-            ) {} rail-schedules)
-
-(comment (defn get-static-schedule-by-station [schedule station-name]
-   (let [stations (parse-static-schedule (load-static-schedule))]
-     (filter #(= (% :station-name) station-name) stations)))))
+            ) {} rail-schedules))
