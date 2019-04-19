@@ -2,6 +2,10 @@
 
 FIXME
 
+## Continuous Integration Status
+
+[![Continuous Integration status](https://secure.travis-ci.org/csmith-cb/smarta-api.png)](http://travis-ci.org/csmith-cb/smarta-api)
+
 ## Prerequisites
 
 You will need [Leiningen][] 2.0.0 or above installed.
