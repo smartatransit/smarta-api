@@ -19,7 +19,6 @@
 (defn plot-scatter []
   (view linear-samp-scatter))
 
-(plot-scatter)
 (def samp-linear-model
   (linear-model Y X))
 
