@@ -1,5 +1,6 @@
 (ns smarta-api.handler
-  (:require [compojure.api.sweet :refer :all]
+  (:require [smarta-api.schedule-client.core :as schedule-client]
+            [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults site-defaults]]))
 
@@ -14,9 +15,9 @@
 
    (context "/api" []
             :tags ["api"]
-            (GET "/hello" []
-                 :query-params [name :- String]
-                 (ok {:message (str "Hello, " name)})))))
+            (GET "/schedule/line" []
+                 :query-params [line :- String]
+                 (ok (schedule-client/get-schedule-by-line line))))))
 
 (def app (-> app-routes
              (wrap-defaults api-defaults)))

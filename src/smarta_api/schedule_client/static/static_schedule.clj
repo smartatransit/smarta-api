@@ -1,6 +1,6 @@
-(ns itg.clj-marta.analyzer.static-schedule
+(ns smarta-api.schedule-client.static.static-schedule
   (:require [clojure.string :as string]
-            [itg.clj-marta.common.util :refer :all]
+            [smarta-api.schedule-client.common.util :refer :all]
             [camel-snake-kebab.core :refer :all]
             [clojure.data.csv :as csv]
             [clojure.java.io :as io]))
