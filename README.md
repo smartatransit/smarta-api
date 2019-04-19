@@ -9,7 +9,7 @@ SMARTA is a very thin wrapper around the
 
 ## Project Goals
 
-Goals? Oh we've got goals - check 'em out in the [overview document](https://github.com/smarta-api/doc/overview.md).
+Goals? Oh we've got goals - check 'em out in the [overview document](https://github.com/csmith-cb/smarta-api/doc/overview.md).
 
 ### TODO
 
