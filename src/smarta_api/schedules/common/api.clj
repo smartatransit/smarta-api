@@ -1,6 +1,6 @@
-(ns smarta-api.schedule-client.common.api
+(ns smarta-api.schedules.common.api
   (:require [clojure.string :as string]
-            [smarta-api.schedule-client.common.config :as config]))
+            [smarta-api.schedules.common.config :as config]))
 
 
 (def marta-api-key (:marta-api-key config/config))

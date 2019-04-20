@@ -1,4 +1,4 @@
-(ns smarta-api.schedule-client.common.config
+(ns smarta-api.schedules.common.config
   (:require [environ.core :refer [env]]))
 
 

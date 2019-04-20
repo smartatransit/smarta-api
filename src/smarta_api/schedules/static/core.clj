@@ -1,6 +1,6 @@
-(ns smarta-api.schedule-client.static.core
-  (:require [smarta-api.schedule-client.common.util :refer :all]
-            [smarta-api.schedule-client.static.static-schedule :as stan]))
+(ns smarta-api.schedules.static.core
+  (:require [smarta-api.schedules.common.util :refer :all]
+            [smarta-api.schedules.static.static-schedule :as stan]))
 
 (def static-rail-schedule (stan/load-rail-schedule))
 
@@ -17,7 +17,7 @@
   (set
    (reduce
     (fn [acc item]
-      (conj acc (get-in stan/rail-lines [item]))) [] (get-lines))))
+      (concat acc (get-in stan/rail-lines [item]))) [] (get-lines))))
 
 (defn get-schedules []
   stan/rail-schedules)
