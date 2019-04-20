@@ -1,4 +1,4 @@
-(ns smarta-api.schedule-client.common.util
+(ns smarta-api.schedules.common.util
   (:require [clojure.string :as string]
             [camel-snake-kebab.core :refer :all]))
 

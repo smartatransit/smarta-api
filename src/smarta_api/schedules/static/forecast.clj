@@ -1,4 +1,4 @@
-(ns smarta-api.schedule-client.static.forecast
+(ns smarta-api.schedules.static.forecast
   (:use clojure.core.matrix
         [incanter.charts :only [scatter-plot add-lines]]
         [incanter.stats :only [linear-model]]
