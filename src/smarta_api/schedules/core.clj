@@ -1,5 +1,5 @@
-(ns smarta-api.schedule-client.core
-  (:require [smarta-api.schedule-client.live.rail.core :as rail-live]))
+(ns smarta-api.schedules.core
+  (:require [smarta-api.schedules.live.rail.core :as rail-live]))
 
 (defn get-schedule [station]
   (rail-live/get-rail-schedule-by-station station))
