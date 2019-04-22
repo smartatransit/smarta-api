@@ -15,7 +15,8 @@
                  [clj-time "0.15.0"]
                  [org.clojure/data.csv "0.1.4"]
                  [incanter "1.9.3"]]
-  :plugins [[lein-ring "0.12.5"]]
+  :plugins [[lein-ring "0.12.5"]
+            [lein-cloverage "1.0.7-SNAPSHOT"]]
   :ring {:handler smarta-api.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
