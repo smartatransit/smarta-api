@@ -191,7 +191,7 @@
       (testing "northbound/southbound"
         (testing "red line"
           (let [expected-red-station-count 19
-                expected-red-nb-arrivals 97
+                expected-red-nb-arrivals 59
                 expected-red-sb-arrivals 58
                 expected-red-nb-first-station "Airport Station"
                 expected-red-nb-last-station "North Springs Station"
