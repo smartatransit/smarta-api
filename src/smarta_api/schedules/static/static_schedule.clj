@@ -30,23 +30,18 @@
   (let [static-schedule (load-static-rail-schedule schedule line direction)]
     (reduce
      (fn [acc item]
-      (merge acc
-              {
-               :station-name (get item 0)
-               :arrivals (drop 1 item)
-              })) [] static-schedule)))
+       (merge acc
+              {:station-name (get item 0)
+               :arrivals (drop 1 item)})) [] static-schedule)))
 
 (defn load-rail-directions [schedule line directions]
-    (reduce (fn [acc item]
-              (assoc acc (keyword item) (load-rail-station-arrivals schedule line item))
-              ) {} directions))
+  (reduce (fn [acc item]
+            (assoc acc (keyword item) (load-rail-station-arrivals schedule line item))) {} directions))
 
 (defn load-rail-lines [schedule lines]
   (reduce (fn [acc item]
-            (assoc acc (keyword item) (load-rail-directions schedule item (rail-lines item)))
-            ) {} lines))
+            (assoc acc (keyword item) (load-rail-directions schedule item (rail-lines item)))) {} lines))
 
 (defn load-rail-schedule []
   (reduce (fn [acc item]
-            (assoc acc (keyword item) (load-rail-lines item (keys rail-lines)))
-            ) {} rail-schedules))
+            (assoc acc (keyword item) (load-rail-lines item (keys rail-lines)))) {} rail-schedules))
