@@ -1,9 +1,9 @@
-(ns smarta-api.schedule-client.live.bus.core
+(ns smarta-api.schedules.live.bus.core
   (:require [cheshire.core :refer :all]
             [clj-http.client :as client]
             [clojure.string :as string]
-            [smarta-api.schedule-client.common.api :as api]
-            [smarta-api.schedule-client.common.util :refer :all]
+            [smarta-api.schedules.common.api :as api]
+            [smarta-api.schedules.common.util :refer :all]
             [camel-snake-kebab.core :refer :all]))
 
 (defn get-bus-schedule []
