@@ -12,7 +12,7 @@
 (def rail-details (reduce (fn [acc item] (conj acc {:line (:line item)
                                                     :line-friendly (capitalize-words (:line item))
                                                     :station (:station item)
-                                                    :station-friendly (capitalize-words (:station item))}) ) [] (get-rail-schedule)))
+                                                    :station-friendly (capitalize-words (:station item))})) [] (get-rail-schedule)))
 
 (def rail-lines (distinct (map #(:line %) rail-details)))
 

@@ -2,7 +2,6 @@
   (:require [clojure.string :as string]
             [smarta-api.schedules.common.config :as config]))
 
-
 (def marta-api-key (:marta-api-key config/config))
 (def marta-api-base-uri (:marta-api-uri config/config))
 (def marta-api-key-suffix (string/replace "?apiKey=%s" #"%s" marta-api-key))

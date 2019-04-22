@@ -25,26 +25,26 @@
             :tags [{:name "api", :description "SMARTA API"}]}}}
 
    (context "/api" []
-            :tags ["api"]
-            (context "/live" []
-                     :tags ["live"]
-                     (GET "/schedule/line" []
-                          :query-params [line :- String]
-                          (ok (schedule-client/get-schedule-by-line line))))
-            (context "/static" []
-                     :tags ["static"]
-                     (GET "/lines" []
-                          :return Lines
-                          (ok {:lines (static-client/get-lines)}))
-                     (GET "/directions" []
-                          :return Directions
-                          (ok {:directions (static-client/get-directions)}))
-                     (GET "/stations" []
-                          :return Directions
-                          :query-params [schedule :- String
-                                         line :- String
-                                         direction :- String]
-                          (ok {:stations (static-client/get-stations (keyword schedule) (keyword line) (keyword direction))}))))))
+     :tags ["api"]
+     (context "/live" []
+       :tags ["live"]
+       (GET "/schedule/line" []
+         :query-params [line :- String]
+         (ok (schedule-client/get-schedule-by-line line))))
+     (context "/static" []
+       :tags ["static"]
+       (GET "/lines" []
+         :return Lines
+         (ok {:lines (static-client/get-lines)}))
+       (GET "/directions" []
+         :return Directions
+         (ok {:directions (static-client/get-directions)}))
+       (GET "/stations" []
+         :return Directions
+         :query-params [schedule :- String
+                        line :- String
+                        direction :- String]
+         (ok {:stations (static-client/get-stations (keyword schedule) (keyword line) (keyword direction))}))))))
 
 (def app (-> app-routes
              (wrap-defaults api-defaults)))
