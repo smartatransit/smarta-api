@@ -14,7 +14,7 @@
       (is (= (get-in rotated-matrix [1 1]) "b1"))
       (is (= (get-in rotated-matrix [2 2]) "c2")))))
 
-(deftest rail-directions-main-path
+(deftest rail-directions-happy-path
   (let [arrivals (load-rail-schedule)]
     (testing "weekday arrivals"
       (testing "northbound/southbound"
