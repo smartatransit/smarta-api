@@ -1,7 +1,7 @@
 # SMARTA
 
 SMARTA is a very thin wrapper around the
-[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented 
+[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented
 with analysis of historic patterns and static schedule data.
 
 ## Continuous Integration Status
@@ -10,7 +10,8 @@ with analysis of historic patterns and static schedule data.
 
 ## Project Goals
 
-Goals? Oh we've got goals - check 'em out in the [overview document](doc/overview.md).
+Goals? Oh we've got goals - check 'em out in the
+[overview document](doc/overview.md).
 
 ### TODO
 
@@ -40,6 +41,12 @@ You will need [Leiningen][] 2.0.0 or above installed.
 To start a web server for the application, run:
 
     lein ring server
+
+## Tests
+
+To run tests for the application, run:
+
+    lein test
 
 ## License
 
