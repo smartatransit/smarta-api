@@ -1,12 +1,15 @@
 # SMARTA
 
 SMARTA is a very thin wrapper around the
-[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented 
+[MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented
 with analysis of historic patterns and static schedule data.
 
 ## Continuous Integration Status
 
 [![Continuous Integration status](https://secure.travis-ci.org/csmith-cb/smarta-api.png)](http://travis-ci.org/csmith-cb/smarta-api)
+[![codecov](https://codecov.io/gh/csmith-cb/smarta-api/branch/master/graph/badge.svg)](https://codecov.io/gh/csmith-cb/smarta-api)
+
+
 
 ## Project Goals
 
