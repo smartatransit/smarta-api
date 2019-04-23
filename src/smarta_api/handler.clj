@@ -33,6 +33,10 @@
          (ok (schedule-client/get-schedule-by-line line))))
      (context "/static" []
        :tags ["static"]
+       (GET "/schedule/station" []
+           :query-params [schedule :- String
+                          station-name :- String]
+           (ok (static-client/get-schedule-by-station (keyword schedule) station-name)))
        (GET "/lines" []
          :return Lines
          (ok {:lines (static-client/get-lines)}))

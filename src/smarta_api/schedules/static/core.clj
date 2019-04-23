@@ -22,8 +22,18 @@
 (defn get-schedules []
   stan/rail-schedules)
 
-(defn parse-static-schedule [])
+(defn get-station [name schedule line direction]
+  (first (filter #(= (% :station-name) name) (get-in static-rail-schedule [schedule line direction]))))
+
+(defn compose-station-schedule [station-name schedule line directions]
+  (reduce
+   (fn [nested-acc direction]
+     (let [station (get-station station-name schedule (keyword line) (keyword direction))]
+       (if (nil? station) nested-acc (assoc nested-acc (keyword direction) (station :arrivals))))) {} directions))
 
 (defn get-schedule-by-station [schedule station-name]
-  (let [stations (parse-static-schedule static-rail-schedule)]
-    (filter #(= (% :station-name) station-name) stations)))
+  (reduce
+   (fn [acc item]
+     (let [[line directions] item
+           composed-schedule (compose-station-schedule station-name schedule line directions)]
+       (if (empty? composed-schedule) acc (assoc acc (keyword line) composed-schedule)))) {:station-name station-name} stan/rail-lines))
