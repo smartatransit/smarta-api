@@ -1,5 +1,5 @@
 # SMARTA
-![smarta](https://user-images.githubusercontent.com/8289478/56632719-227fbd80-6629-11e9-953f-91025efa41f8.png)
+<img src="https://user-images.githubusercontent.com/8289478/56633099-d6357d00-662a-11e9-9592-0c58dab8ca55.png" width="300" height="72" />
 
 SMARTA is a very thin wrapper around the
 [MARTA APIs](http://www.itsmarta.com/app-developer-resources.aspx) supplemented
