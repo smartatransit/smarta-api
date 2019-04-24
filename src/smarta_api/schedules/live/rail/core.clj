@@ -10,7 +10,7 @@
   (let [arrivals (client/get (api/get-rail-arrivals-endpoint))]
     (parse-string (:body arrivals) to-keyword)))
 
-(def rail-details
+(defn get-rail-details []
   (reduce
    (fn [acc item]
      (conj acc {:line (:line item)
@@ -18,9 +18,9 @@
                 :station (:station item)
                 :station-friendly (capitalize-words (:station item))})) [] (get-rail-schedule)))
 
-(def rail-lines (distinct (map #(:line %) rail-details)))
+(defn get-rail-lines [] (distinct (map #(:line %) (get-rail-details))))
 
-(def rail-stations (distinct (map #(:station %) rail-details)))
+(defn get-rail-stations [] (distinct (map #(:station %) (get-rail-details))))
 
 (defn get-rail-schedule-by-station [station]
   (filter #(= (:station %) station) (get-rail-schedule)))
