@@ -7,12 +7,16 @@
             [camel-snake-kebab.core :refer :all]))
 
 (defn get-rail-schedule []
-  (parse-string (:body (client/get (api/get-rail-arrivals-endpoint))) to-keyword))
+  (let [arrivals (client/get (api/get-rail-arrivals-endpoint))]
+    (parse-string (:body arrivals) to-keyword)))
 
-(def rail-details (reduce (fn [acc item] (conj acc {:line (:line item)
-                                                    :line-friendly (capitalize-words (:line item))
-                                                    :station (:station item)
-                                                    :station-friendly (capitalize-words (:station item))})) [] (get-rail-schedule)))
+(def rail-details
+  (reduce
+   (fn [acc item]
+     (conj acc {:line (:line item)
+                :line-friendly (capitalize-words (:line item))
+                :station (:station item)
+                :station-friendly (capitalize-words (:station item))})) [] (get-rail-schedule)))
 
 (def rail-lines (distinct (map #(:line %) rail-details)))
 
