@@ -1,4 +1,3 @@
-# SMARTA
 <img src="https://user-images.githubusercontent.com/8289478/56633099-d6357d00-662a-11e9-9592-0c58dab8ca55.png" width="300" height="72" />
 
 SMARTA is a very thin wrapper around the
@@ -33,7 +32,7 @@ SMARTA is _very_ young. Young, scrappy, and hungry. 😎
 
 ## Prerequisites
 
-You will need a[MARTA API key](https://www.itsmarta.com/developer-reg-rtt.aspx)
+You will need a [MARTA API key](https://www.itsmarta.com/developer-reg-rtt.aspx)
 to fetch the live results from MARTA's base API.
 
 You will need [Leiningen][] 2.0.0 or above installed.
