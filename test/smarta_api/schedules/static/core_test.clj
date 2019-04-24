@@ -14,7 +14,11 @@
   (testing "directions"
     (let [directions (get-directions)
           expected-direction-count 4]
-      (is (= expected-direction-count (count directions))))))
+      (is (= expected-direction-count (count directions)))))
+  (testing "stations"
+    (let [expected-station-count 19
+          stations (get-stations :weekday :red :northbound)]
+      (is (= expected-station-count (count stations))))))
 
 (deftest station-operations
   (testing "get valid statio"
