@@ -59,13 +59,13 @@ the boundaries of the taxonomy listed below.
 
 Examples:
 
-![alt text](https://i.imgur.com/xD57K9S.jpg "No data")
+![alt text](https://user-images.githubusercontent.com/8289478/56632784-64a8ff00-6629-11e9-9725-f71ddf72af82.jpg "No data")
 
-![alt text](https://i.imgur.com/9KLhrgn.png "Twitter")
+![alt text](https://user-images.githubusercontent.com/8289478/56632800-8609eb00-6629-11e9-869c-c9b900b04f3a.png "Twitter")
 
-![alt text](https://i.imgur.com/3yWBJ1v.jpg "Ghost train")
+![alt text](https://user-images.githubusercontent.com/8289478/56632832-b05ba880-6629-11e9-94bf-5c2e88277236.jpg "Ghost train")
 
-![alt text](https://i.imgur.com/9IgWE7G.jpg "Incongruent data")
+![alt text](https://user-images.githubusercontent.com/8289478/56632843-c0738800-6629-11e9-90d4-1a5d85349ccd.jpg "Incongruent data")
 
 ### The Goal
 
