@@ -8,8 +8,7 @@
 (def bus-list-endpoint "http://developer.itsmarta.com/BRDRestService/RestBusRealTimeService/GetAllBus?apiKey=some-api-key")
 
 (def bus-list-response-body
-  '({
-     :adherence "-23"
+  '({:adherence "-23"
      :blockid "144"
      :block_abbr "143-17"
      :direction "Northbound"
@@ -20,10 +19,8 @@
      :stopid "1"
      :timepoint "Timepoint 1"
      :tripid "6708735"
-     :vehicle "2504"
-     }
-    {
-     :adherence "-23"
+     :vehicle "2504"}
+    {:adherence "-23"
      :blockid "144"
      :block_abbr "143-17"
      :direction "Northbound"
@@ -34,8 +31,7 @@
      :stopid "2"
      :timepoint "Timepoint 2"
      :tripid "6708735"
-     :vehicle "2504"
-     }))
+     :vehicle "2504"}))
 
 (defn get-bus-list-mock [request]
   {:status 200 :headers {} :body (generate-string bus-list-response-body)})
@@ -48,11 +44,11 @@
         (is (= expected-detail-count (count details)))))
     (testing "routes"
       (testing "all routes"
-       (let [expected-route-count 1
-             expected-routes ["100"]
-             bus-routes (get-bus-routes)]
-         (is (= expected-route-count (count bus-routes)))
-         (is (= expected-routes bus-routes)))))
+        (let [expected-route-count 1
+              expected-routes ["100"]
+              bus-routes (get-bus-routes)]
+          (is (= expected-route-count (count bus-routes)))
+          (is (= expected-routes bus-routes)))))
     (testing "by stop"
       (let [expected-route-count 1
             bus-routes (get-routes-by-stop "1")]
