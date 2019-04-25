@@ -9,23 +9,24 @@
 (defn get-bus-schedule []
   (parse-string (:body (client/get (api/get-bus-list-endpoint))) to-keyword))
 
-(def bus-details (reduce (fn [acc item] (conj acc {:route (:route item)
-                                                   :stopid (:stopid item)
-                                                   :direction (:direction item)
-                                                   :timepoint (:timepoint item)
-                                                   :latitude (:latitude item)
-                                                   :longitude (:longitude item)})) [] (get-bus-schedule)))
+(defn get-bus-details [] (reduce (fn [acc item] (conj acc {:route (:route item)
+                                                           :stopid (:stopid item)
+                                                           :direction (:direction item)
+                                                           :timepoint (:timepoint item)
+                                                           :latitude (:latitude item)
+                                                           :longitude (:longitude item)})) [] (get-bus-schedule)))
 
-(def bus-timepoints (distinct (map #(:timepoint %) bus-details)))
+(defn get-bus-timepoints [] (distinct (map #(:timepoint %) (get-bus-details))))
 
-(def bus-routes (distinct (map #(:route %) bus-details)))
+(defn get-bus-routes [] (distinct (map #(:route %) (get-bus-details))))
 
-(def bus-stops (distinct (map #(:stopid %) bus-details)))
+(defn get-bus-stops [] (distinct (map #(:stopid %) (get-bus-details))))
 
-(defn get-routes-by-stop [stop])
+(defn get-routes-by-stop [stop]
+  (filter #(= (:stopid %) stop) (get-bus-details)))
 
-(defn get-stop-by-route [route]
-  (filter #(= (:route %) route) bus-details))
+(defn get-stops-by-route [route]
+  (filter #(= (:route %) route) (get-bus-details)))
 
 (defn get-stops-by-timepoint [timepoint]
-  (filter #(= (:timepoint %) timepoint) bus-details))
+  (filter #(= (:timepoint %) timepoint) (get-bus-details)))
