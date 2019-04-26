@@ -21,7 +21,7 @@
       (is (= expected-station-count (count stations))))))
 
 (deftest station-operations
-  (testing "get valid statio"
+  (testing "get valid station"
     (let [expected-station-name "Airport Station"
           expected-arrivals 98
           station (get-station expected-station-name :weekday :red :northbound)]
