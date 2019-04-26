@@ -4,6 +4,7 @@
             [compojure.api.sweet :refer :all]
             [schema.core :as s]
             [ring.util.http-response :refer :all]
+            [ring.middleware.json :as middleware]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults site-defaults]]))
 
 (s/defschema Lines
@@ -51,4 +52,6 @@
          (ok {:stations (static-client/get-stations (keyword schedule) (keyword line) (keyword direction))}))))))
 
 (def app (-> app-routes
-             (wrap-defaults api-defaults)))
+             (wrap-defaults api-defaults)
+             (middleware/wrap-json-body {:keywords? true})
+             middleware/wrap-json-response))

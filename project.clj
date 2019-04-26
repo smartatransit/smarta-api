@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [metosin/compojure-api "2.0.0-alpha30"]
                  [ring/ring-defaults "0.3.2"]
+                 [ring/ring-json "0.3.1"]
                  [net.mikera/core.matrix "0.62.0"]
                  [clatrix "0.5.0"]
                  [clojurewerkz/support "1.1.0"]
