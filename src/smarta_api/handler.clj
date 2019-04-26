@@ -54,4 +54,4 @@
 (def app (-> app-routes
              (wrap-defaults api-defaults)
              (middleware/wrap-json-body {:keywords? true})
-              middleware/wrap-json-response))
+             middleware/wrap-json-response))
