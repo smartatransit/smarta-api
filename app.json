@@ -1,0 +1,24 @@
+{
+  "addons": [
+    "logentries"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/clojure"
+    }
+  ],
+  "env": {
+    "MARTA_API_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "smarta-api",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
