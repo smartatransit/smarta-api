@@ -14,10 +14,11 @@
   (keys stan/rail-lines))
 
 (defn get-directions []
-  (set
-   (reduce
-    (fn [acc item]
-      (concat acc (get-in stan/rail-lines [item]))) [] (get-lines))))
+  (seq
+   (set
+    (reduce
+     (fn [acc item]
+       (concat acc (get-in stan/rail-lines [item]))) [] (get-lines)))))
 
 (defn get-schedules []
   stan/rail-schedules)
