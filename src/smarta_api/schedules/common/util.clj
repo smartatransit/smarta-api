@@ -2,6 +2,11 @@
   (:require [clojure.string :as string]
             [camel-snake-kebab.core :refer :all]))
 
+(defn rotate-matrix
+  "Rotate a matrix counter-clockwise"
+  [matrix]
+  (apply mapv vector matrix))
+
 (defn capitalize-words
   "Capitalize every word in a string"
   [s]
