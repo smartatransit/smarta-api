@@ -7,7 +7,7 @@ with analysis of historic patterns and static schedule data.
 ## Continuous Integration Status
 
 [![Continuous Integration status](https://secure.travis-ci.org/trillnye/smarta-api.png)](http://travis-ci.org/trillnye/smarta-api)
-[![codecov](https://codecov.io/gh/csmith-cb/smarta-api/branch/master/graph/badge.svg)](https://codecov.io/gh/csmith-cb/smarta-api)
+[![codecov](https://codecov.io/gh/trillnye/smarta-api/branch/master/graph/badge.svg)](https://codecov.io/gh/trillnye/smarta-api)
 
 
 
