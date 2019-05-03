@@ -36,8 +36,7 @@
      :tags ["api"]
      (context "/live" []
        :tags ["live"]
-       (GET "/schedule/line" []
-         :query-params [line :- String]
+       (GET "/schedule/line/:line" [line]
          (ok (schedule-client/get-schedule-by-line line))))
      (context "/static" []
        :tags ["static"]
