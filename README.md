@@ -6,7 +6,7 @@ with analysis of historic patterns and static schedule data.
 
 ## Continuous Integration Status
 
-[![Continuous Integration status](https://secure.travis-ci.org/csmith-cb/smarta-api.png)](http://travis-ci.org/csmith-cb/smarta-api)
+[![Continuous Integration status](https://secure.travis-ci.org/trillnye/smarta-api.png)](http://travis-ci.org/trillnye/smarta-api)
 [![codecov](https://codecov.io/gh/csmith-cb/smarta-api/branch/master/graph/badge.svg)](https://codecov.io/gh/csmith-cb/smarta-api)
 
 
@@ -23,6 +23,7 @@ Goals? Oh we've got goals - check 'em out in the
 - [x] Find bus schedule by stop
 - [x] Find bus stop by route
 - [ ] Find routes by stop
+- [x] Find rail stations by location
 - [ ] Add projected arrival/departure time based on historical trends
 - [ ] Create `with-credentials` wrapper for non-env credential flexibility
 
