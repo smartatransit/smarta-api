@@ -14,9 +14,6 @@
                   "blue" ["eastbound" "westbound"]
                   "green" ["eastbound" "westbound"]})
 
-(defn rotate-matrix [matrix]
-  (apply mapv vector matrix))
-
 (defn get-rail-schedule-file-name [schedule line direction]
   (format rail-file-location schedule line direction))
 

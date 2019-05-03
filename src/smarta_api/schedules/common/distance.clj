@@ -1,7 +1,7 @@
 (ns smarta-api.schedules.common.distance
   (:require [geo.spatial :as spatial]
             [geo.geohash :as ghash]
-            [smarta-api.schedules.static.static-schedule :as stat]
+            [smarta-api.schedules.common.util :refer :all]
             [clojure.data.csv :as csv]
             [clojure.java.io :as io]))
 
@@ -13,7 +13,7 @@
 
 (defn load-stations []
   (with-open [reader (io/reader station-file-location)]
-    (stat/rotate-matrix
+    (rotate-matrix
      (doall
       (csv/read-csv reader)))))
 
@@ -29,7 +29,9 @@
   (let [center (ghash/geohash-center (ghash/geohash geohash))]
     [(.getLatitude center) (.getLongitude center)]))
 
-(defn get-crow-distance [departure destination]
+(defn get-crow-distance
+  "Gets distance (in km)  between two points as the crow flies"
+  [departure destination]
   (/ (spatial/distance departure destination) 1000))
 
 (defn get-stations-by-distance [lat long]
