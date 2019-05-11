@@ -12,10 +12,21 @@
     (parse-string (:body arrivals) to-keyword)))
 
 (defn to-schema-result [schedule-item]
-  {:station {:name (capitalize-words (:station schedule-item))
-             :line (capitalize-words (:line schedule-itme))
-             :}
-   :schedule {}})
+  {:station  {:name      (capitalize-words (:station schedule-item))
+              :line      (capitalize-words (:line schedule-item))
+              :direction (capitalize-words (:direction schedule-item))}
+   :schedule {:train-id        (:train-id schedule-item)
+              :next-station    (capitalize-words (:station schedule-item))
+              :destination     (str (capitalize-words (:destination schedule-item) ) " Station")
+              :next-arrival    (:next-arr schedule-item)
+              :waiting-seconds (:waiting-seconds schedule-item)
+              :waiting-time    (:waiting-time schedule-item)
+              :event-time      (:event-time schedule-item)}})
+
+(defn get-schema-schedule []
+  (reduce
+    (fn [acc item]
+        (conj acc (to-schema-result item))) [] (get-rail-schedule)))
 
 (defn get-rail-details []
   (reduce
