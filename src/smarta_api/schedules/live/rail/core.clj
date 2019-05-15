@@ -23,25 +23,17 @@
               :waiting-time    (:waiting-time schedule-item)
               :event-time      (:event-time schedule-item)}})
 
-(defn get-schema-schedule []
+(defn get-rail-details[]
   (reduce
     (fn [acc item]
         (conj acc (to-schema-result item))) [] (get-rail-schedule)))
 
-(defn get-rail-details []
-  (reduce
-   (fn [acc item]
-     (conj acc {:line (:line item)
-                :line-friendly (capitalize-words (:line item))
-                :station (:station item)
-                :station-friendly (capitalize-words (:station item))})) [] (get-rail-schedule)))
+(defn get-rail-lines [] (distinct (map #(get-in % [:station :line]) (get-rail-details))))
 
-(defn get-rail-lines [] (distinct (map #(:line %) (get-rail-details))))
-
-(defn get-rail-stations [] (distinct (map #(:station %) (get-rail-details))))
+(defn get-rail-stations [] (distinct (map #(get-in % [:station :name]) (get-rail-details))))
 
 (defn get-rail-schedule-by-station [station]
-  (filter #(= (:station %) station) (get-rail-schedule)))
+  (filter #(= (get-in % [:station :name]) station) (get-rail-details)))
 
 (defn get-rail-schedule-by-line [line]
-  (filter #(= (:line %) line) (get-rail-schedule)))
+  (filter #(= (get-in % [:station :line]) line) (get-rail-details)))

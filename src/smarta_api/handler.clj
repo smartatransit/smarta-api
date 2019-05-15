@@ -1,5 +1,5 @@
 (ns smarta-api.handler
-  (:require [smarta-api.schedules.core :as schedule-client]
+  (:require [smarta-api.schedules.live.rail.core :as rail-live-client]
             [smarta-api.schedules.static.core :as static-client]
             [smarta-api.schedules.common.distance :as distance]
             [smarta-api.schemas.rail :as rail-schema]
@@ -23,10 +23,10 @@
      (context "/live" []
        :tags ["live"]
        (GET "/schedule/line/:line" [line]
-         (ok (schedule-client/get-schedule-by-line line)))
+         (ok (rail-live-client/get-rail-schedule-by-line line)))
        (GET "/schedule/station" []
             :query-params [station-name :- String]
-            (ok (schedule-client/get-schedule station-name))))
+            (ok (rail-live-client/get-rail-schedule-by-station station-name))))
      (context "/static" []
        :tags ["static"]
        (GET "/schedule/station" []

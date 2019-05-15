@@ -50,7 +50,7 @@
   (is (= expected-body (parse-string (slurp (response :body)) true))))
 
 (deftest schedule-api
-  (with-redefs [smarta-api.schedules.core/get-schedule-by-line get-schedule-by-line-mock
+  (with-redefs [smarta-api.schedules.live.rail.core/get-rail-schedule-by-line get-schedule-by-line-mock
                 smarta-api.schedules.static.core/get-schedule-by-station get-schedule-by-station-mock
                 smarta-api.schedules.static.core/get-lines get-lines-mock
                 smarta-api.schedules.static.core/get-directions get-directions-mock
