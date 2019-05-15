@@ -34,7 +34,7 @@
   (with-fake-routes {rail-arrivals-endpoint get-rail-arrivals-mock}
     (testing "lines"
       (let [expected-line-count 1
-            expected-lines ["BLUE"]
+            expected-lines ["Blue"]
             rail-lines (get-rail-lines)]
         (is (= expected-line-count (count rail-lines)))
         (is (= expected-lines rail-lines))))
@@ -50,10 +50,10 @@
               expected-station-name "Station 1"
               schedule (get-rail-schedule-by-station "Station 1")]
           (is (= expected-schedule-count (count schedule)))
-          (is (= expected-station-name ((first schedule) :station)))))
+          (is (= expected-station-name (get-in (first schedule) [:station :name])))))
       (testing "by line"
         (let [expected-schedule-count 2
               expected-station-name "Station 1"
-              schedule (get-rail-schedule-by-line "BLUE")]
+              schedule (get-rail-schedule-by-line "Blue")]
           (is (= expected-schedule-count (count schedule)))
-          (is (= expected-station-name ((first schedule) :station))))))))
+          (is (= expected-station-name (get-in (first schedule) [:station :name]))))))))
