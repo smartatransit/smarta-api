@@ -7,7 +7,7 @@ with analysis of historic patterns and static schedule data.
 
 ## Continuous Integration Status
 
-[![Continuous Integration status](https://secure.travis-ci.org/smartratransit/smarta-api.png)](http://travis-ci.org/smartatransit/smarta-api)
+[![Continuous Integration status](https://travis-ci.org/smartatransit/smarta-api.svg?branch=master)](https://travis-ci.org/smartatransit/smarta-api.svg?branch=master)
 [![codecov](https://codecov.io/gh/smartatransit/smarta-api/branch/master/graph/badge.svg)](https://codecov.io/gh/smartatransit/smarta-api)
 
 ## Project Goals
