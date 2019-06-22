@@ -53,6 +53,6 @@ To run tests for the application, run:
 
 ## License
 
-Copyright© 2019 Interesting Times Gang.
+Copyright© 2019 SMARTA Transit
 
 Distributed under the GNU Public License version 3
