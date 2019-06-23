@@ -1,9 +1,10 @@
+dist: trusty
 language: clojure
 lein: lein
 script: lein test
 jdk:
-  - openjdk8
-  - oraclejdk8
+  - openjdk9
+  - oraclejdk9
 after_success:
   - CLOVERAGE_VERSION=1.0.7-SNAPSHOT lein cloverage --codecov
   - bash <(curl -s https://codecov.io/bash)
